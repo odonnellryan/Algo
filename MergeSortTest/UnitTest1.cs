@@ -16,11 +16,11 @@ namespace MergeSortTest
             string path = @"C:\Users\Ryan\Documents\1000.txt";
             string[] read = File.ReadAllLines(path);
             
-            //double inversions = 0;
             List<int> unsortedList = read.Select(int.Parse).ToList();
-            //List<int> sortedList = RyansMergeSort.SortAndCount(unsortedList, ref inversions);
             
-            //Console.WriteLine(inversions);
+            // needs to pass test case: 
+            // first   last   median
+            // 10297   10184  8921
 
             double comparisons = new double();
             Quicksort.quicksort(ref unsortedList, 0, unsortedList.Count - 1, ref comparisons);
