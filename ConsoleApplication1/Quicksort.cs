@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     public static class Quicksort
     {
-        public static void quicksort(ref List<int> unsortedList, int leftIndex, int rightIndex)
+        public static void quicksort(ref List<int> unsortedList, int leftIndex, int rightIndex, ref double comparisons)
         {
             if (unsortedList.Count < 2)
             {
@@ -16,15 +16,16 @@ namespace ConsoleApplication1
             }
             if (leftIndex < rightIndex)
             {
-                int pivot = Partition(ref unsortedList, leftIndex, rightIndex);
-                quicksort(ref unsortedList, leftIndex, pivot - 1);
-                quicksort(ref unsortedList, pivot + 1, rightIndex);
+                int pivot = Partition(ref unsortedList, leftIndex, rightIndex, ref comparisons);
+                quicksort(ref unsortedList, leftIndex, pivot - 1, ref comparisons);
+                quicksort(ref unsortedList, pivot + 1, rightIndex, ref comparisons);
             }
             
         }
 
-        public static int Partition(ref List<int> unsortedList, int leftIndex, int rightIndex)
+        public static int Partition(ref List<int> unsortedList, int leftIndex, int rightIndex, ref double comparisons)
         {
+            comparisons += rightIndex - leftIndex;
             int tmp;
             int pivot = unsortedList[leftIndex];
             int separator = leftIndex + 1;
