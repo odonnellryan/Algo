@@ -45,7 +45,7 @@ namespace AlgoCourse
         {
             // method to move the pivot to the beginning of the array subset.
             // this is implemented here, because the course insisted on using their 
-            // exact partitioning algorythm (to ensure tests pass)
+            // exact partitioning algorithm (to ensure tests pass)
             // three cases:
             // 1) left (do nothing) 2) median (-of-three) 3) right (swap first with right-most)
             if (testCase == "left")
