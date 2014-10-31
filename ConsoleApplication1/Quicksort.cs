@@ -68,13 +68,44 @@ namespace AlgoCourse
                 {
                     middleIndex = leftIndex + ((size / 2) - 1);
                 }
-                List<int> list = new List<int>() { unsortedList[rightIndex], unsortedList[leftIndex], unsortedList[middleIndex] };
 
-                list.Sort();
-
-                int index = unsortedList.IndexOf(list[1]);
-
-                Swap(ref unsortedList, leftIndex, index);
+                if (unsortedList[middleIndex] > unsortedList[leftIndex])
+                {
+                    if (unsortedList[leftIndex] > unsortedList[rightIndex])
+                    {
+                        // return if left is the median index, no swap needed.
+                        return;
+                    }
+                    if (unsortedList[rightIndex] > unsortedList[middleIndex])
+                    {
+                        Swap(ref unsortedList, leftIndex, middleIndex);
+                    }
+                    else // right is the median index
+                    {
+                        Swap(ref unsortedList, leftIndex, rightIndex);
+                    }
+                }
+                else // left is more than middle (MLx)
+                {
+                    if (unsortedList[rightIndex] > unsortedList[leftIndex])
+                    {
+                        // return if left is the median index, no swap needed.
+                        return;
+                    }
+                    if (unsortedList[middleIndex] > unsortedList[rightIndex])
+                    {
+                        Swap(ref unsortedList, leftIndex, middleIndex);
+                    }
+                    else // right is the median index
+                    {
+                        Swap(ref unsortedList, leftIndex, rightIndex);
+                    }
+                }
+                // naive way (using sort)
+                // List<int> list = new List<int>() { unsortedList[rightIndex], unsortedList[leftIndex], unsortedList[middleIndex] };
+                // list.Sort();
+                // int index = unsortedList.IndexOf(list[1]);
+                // Swap(ref unsortedList, leftIndex, index);
                 return;
             }
             if (testCase == "right") {
