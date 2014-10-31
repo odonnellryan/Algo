@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace AlgoCourse
 {
-    class Program
+    class AlgoCourse
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+            //... 
+            return 0;
         }
     }
+    
 }

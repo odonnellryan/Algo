@@ -1,26 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleApplication1
+namespace AlgoCourse
 {
-    public class RyansMergeSort
+    public class MergeSort
     {
-        public static List<int> SortAndCount(List<int> list, ref double inversions)
+        public static List<int> Sort(List<int> list, ref long inversions)
         {
             if (list.Count < 2)
             {
                 return list;
             }
 
-            List<int> firstList = SortAndCount(list.Take(list.Count / 2).ToList(), ref inversions);
-            List<int> secondList = SortAndCount(list.Skip(list.Count / 2).ToList(), ref inversions);
+            List<int> firstList = Sort(list.Take(list.Count / 2).ToList(), ref inversions);
+            List<int> secondList = Sort(list.Skip(list.Count / 2).ToList(), ref inversions);
 
             List<int> final = MergeAndCount(firstList, secondList, ref inversions);
 
             return final;
         }
 
-        private static List<int> MergeAndCount(List<int> firstList, List<int> secondList, ref double inversions)
+        private static List<int> MergeAndCount(List<int> firstList, List<int> secondList, ref long inversions)
         {
             List<int> newList = new List<int>();
             int firstCount = 0;
