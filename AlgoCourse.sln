@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.21901.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoCourse", "ConsoleApplication1\AlgoCourse.csproj", "{789005F0-22D9-4E3A-BDAA-F206D0408D44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoCourse", "AlgoCourse\AlgoCourse.csproj", "{789005F0-22D9-4E3A-BDAA-F206D0408D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCases", "MergeSortTest\TestCases.csproj", "{578E49F9-D8ED-49A1-8550-DDB7C9C21F23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCases", "Tests\TestCases.csproj", "{578E49F9-D8ED-49A1-8550-DDB7C9C21F23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
