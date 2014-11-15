@@ -12,10 +12,8 @@ namespace AlgoCourse
         [TestMethod]
         public void QuicksortTest()
         {
-            string path = @"QuickSortFullTestCase.txt";
-            string[] read = File.ReadAllLines(path);
-            List<int> unsortedList;
-            long comparisons;
+            const string path = @"QuickSortFullTestCase.txt";
+            var read = File.ReadAllLines(path);
 
             // needs to pass test cases: 
             // size     first    last    median
@@ -23,8 +21,8 @@ namespace AlgoCourse
             // 100      615      587     518
             // 1000     10297    10184   8921
 
-            unsortedList = read.Select(int.Parse).ToList();
-            comparisons = new long();
+            var unsortedList = read.Select(int.Parse).ToList();
+            var comparisons = new long();
             Quicksort.Sort(ref unsortedList, 0, unsortedList.Count - 1, ref comparisons, "left");
             //Assert.AreEqual(10297, comparisons);
             Console.WriteLine(comparisons);
@@ -45,18 +43,30 @@ namespace AlgoCourse
         [TestMethod]
         public void MergeSortTest()
         {
-            string path = @"MergeSortFullTestCase.txt";
-            string[] read = File.ReadAllLines(path);
+            const string path = @"MergeSortFullTestCase.txt";
+            var read = File.ReadAllLines(path);
 
-            List<int> unsortedList = read.Select(int.Parse).ToList();
+            var unsortedList = read.Select(int.Parse).ToList();
 
-            long inversions = new long();
+            var inversions = new long();
 
             MergeSort.Sort(unsortedList, ref inversions);
 
             // print the output - this is for an exam, we don't have anything to compare against.
             Console.WriteLine(inversions);
 
+        }
+        [TestMethod]
+        public void StronglyConnectedComponentsTest()
+        {
+            const string path = @"SCC.txt";
+            var file = new StreamReader(path);
+            var newGraph = new Graph(file);
+
+            DepthFirstSearch.Search(newGraph);
+            Console.WriteLine(newGraph);
+            var topSCCS = StronglyConnectedComponents.TopSCCs(newGraph);
+            Console.WriteLine(topSCCS);
         }
     }
 }
