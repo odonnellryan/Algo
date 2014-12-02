@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace AlgoCourse
 {
-    public class Graph {
+    public partial class Graph {
 
-        public class Node
+        public partial class Node
         {
             public int leader = 0;
             public int Id;
